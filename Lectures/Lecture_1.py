@@ -265,15 +265,16 @@
 
 # print_numbers(5)
 
-def join_numbers_from_range(start, finish):
-    initial_el = ""
-    i = start
-    while i <= finish:
-        new_str = str(i)
-        initial_el += new_str
-        i += 1
-    return initial_el
+# def join_numbers_from_range(start, finish):
+#     initial_el = ""
+#     i = start
+#     while i <= finish:
+#         new_str = str(i)
+#         initial_el += new_str
+#         i += 1
+#     return initial_el
+#
+# print (join_numbers_from_range(5, 1000))
 
-print (join_numbers_from_range(5, 1000))
-
-
+num = 10
+print(type(num))
