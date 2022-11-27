@@ -8,15 +8,15 @@ import math
 # 7 -> да
 # 1 -> нет
 
-# def is_weekend(num=int(input('Введите целое число от 1 до 7 : '))):
-    # if 1 <= num <= 7 and isinstance(num, int):
-    #     if num >= 6:
-    #         return "Сегодня отдыхаем"
-    #     else:
-    #         return "Пора работать"
-    # else:
-    #     return "Вы ввели неверное значение, запустите программу заново"
-    #
+def is_weekend(num=int(input('Введите целое число от 1 до 7 : '))):
+    if 1 <= num <= 7 and isinstance(num, int):
+        if num >= 6:
+            return "Сегодня отдыхаем"
+        else:
+            return "Пора работать"
+    else:
+        return "Вы ввели неверное значение, запустите программу заново"
+
 
 
 
