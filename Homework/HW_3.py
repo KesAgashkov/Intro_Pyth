@@ -117,9 +117,7 @@ def difference_max_min_el_after_point(lenght: int) -> int:
 Результат: {res}
 ''')
 
-difference_max_min_el_after_point (10)
-
-
+# difference_max_min_el_after_point (10)
 
 
 # 4- Напишите программу, которая будет преобразовывать десятичное число в двоичное. Подумайте, как это можно
@@ -132,6 +130,29 @@ difference_max_min_el_after_point (10)
 # 3 -> 11
 # 2 -> 10
 
+def convert_int_to_bin(num: int, list = []) -> list:
+    """
+            Функция преобразовывает десятичное число в двоичное
+
+        Args:
+        num: int
+
+        Returns:
+        "list": бинарное выражение числа
+
+    """
+    if num <= 0:
+        return list[::-1]
+    else:
+        x = num%2
+        list.append(x)
+        num = int(num/2)
+        convert_int_to_bin(num)
+        return list[::-1]
+
+
+# print(f'Представление агрумента в бинарном виде: {convert_int_to_bin(10)}')
+# print(bin(10))
 # 5-Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 #
 # Пример:
@@ -140,7 +161,35 @@ difference_max_min_el_after_point (10)
 #
 # Решение оформлять в виде функций
 # По возможности добавляйте docstring
-#
+
+def show_fibonachi_minus_to_plus(num: int, list = []) -> list:
+    """
+            Функция отображает список чисел Фибоначчи (отрицательные и положительные значения)
+
+        Args:
+        num: int
+        Returns:
+        list: list
+
+    """
+    list_1 = []
+    f1 = 0
+    f2 = 1
+    for _ in range(num):
+        list_1.append(f1)
+        f1,f2 = f2, f1 + f2
+    list_1.pop(0)
+    list_2 = []
+    p1 = 0
+    p2 = -1
+    for _ in range(0,(-1*num),-1):
+        list_2.append(abs(p1)*-1)
+        p1, p2 = p2, p1 - p2
+
+    list = list_2[::-1] + list_1
+    return print(list)
+
+show_fibonachi_minus_to_plus(15)
 #(Дополнительно для навыков работы со словарями) *
 # 6 - Бухгалтер Люба заполняет ведомость по зарплате. У Любы есть два файла - один с фио, другой - с зарплатой за декабрь.
 #
