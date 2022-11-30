@@ -66,7 +66,7 @@ def factorial ():
         return 'Ошибочка. Попробуйте еще раз'
     else:
         start = 1
-        new_list = []*num
+        new_list = []
         i = 0
         result = 1
         while i <= (num-1):
@@ -75,22 +75,22 @@ def factorial ():
             ## почему нельзя присвоить значения без аппенд по индексу
             i += 1
     return new_list
-
+print(factorial ())
 # 3 - Дан массив размера N. После каждого отрицательного элемента массива вставьте элемент с нулевым значением.
 #
 # Пример:
 # - пусть N = 4, тогда [28, -46, 14, -14] => [28, -46, 0, 14, -14, 0]
 
-def create_list_with_zero ():
-    num = input("Задайте массив целых чисел включая отрицательные числа(для разделения используйте пробел) : ")
-    num = num.split()
-    num = list(num)
-    x = []
-    for i in num:
-        x.append(i)
-        if int(i) < 0:
-            x.append(0)
-    return x
+# def create_list_with_zero ():
+#     num = input("Задайте массив целых чисел включая отрицательные числа(для разделения используйте пробел) : ")
+#     num = num.split()
+#     num = list(num)
+#     x = []
+#     for i in num:
+#         x.append(i)
+#         if int(i) < 0:
+#             x.append(0)
+#     return x
 
 # print(create_list_with_zero())
 
@@ -104,31 +104,31 @@ def create_list_with_zero ():
 
 # def game_with_coins (whole_num, choose num):
 
-whole_num = 5
-
-choose_num = 2
-num_two_coin = whole_num - choose_num
-list_partic = [1] * choose_num + [2] * num_two_coin
-print(list_partic)
-new_partic = []
-k = 0
-p = 0
-x = 0
-
-while k <= whole_num:
-    new_partic.append(list_partic[k])
-    k += 1
-
-new_partic[choose_num] = list_partic[choose_num - 1] + list_partic[choose_num]
-new_partic.pop(choose_num - 1)
-whole_num = whole_num - 1
-
-print(new_partic)
-
-whole_num = whole_num - 1
-
-
-print(new_partic)
+# whole_num = 5
+#
+# choose_num = 2
+# num_two_coin = whole_num - choose_num
+# list_partic = [1] * choose_num + [2] * num_two_coin
+# print(list_partic)
+# new_partic = []
+# k = 0
+# p = 0
+# x = 0
+#
+# while k <= whole_num:
+#     new_partic.append(list_partic[k])
+#     k += 1
+#
+# new_partic[choose_num] = list_partic[choose_num - 1] + list_partic[choose_num]
+# new_partic.pop(choose_num - 1)
+# whole_num = whole_num - 1
+#
+# print(new_partic)
+#
+# whole_num = whole_num - 1
+#
+#
+# print(new_partic)
 
 # x = 0
 # x = list_partic[i]+list_partic[i+1]

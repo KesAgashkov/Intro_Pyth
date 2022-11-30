@@ -37,14 +37,14 @@
 # print(filter_string('П Прfd ипя тdsdsь', 'П'))
 
 
-
-def count_vowels(str, char):
-    count = 0
-    for i in str:
-        if symbols.is_vowel(str[i]) == char:
-            count += 1
-    return count
-count_vowels('привет', 'и')
+#
+# def count_vowels(str, char):
+#     count = 0
+#     for i in str:
+#         if symbols.is_vowel(str[i]) == char:
+#             count += 1
+#     return count
+# count_vowels('привет', 'и')
 
 # from kit import show_language, say_hello, say_bye
 #
@@ -52,4 +52,16 @@ count_vowels('привет', 'и')
 #     show_language()
 #     say_hello()
 #     say_bye()
+
+
+import random
+def choice_from_range(text, start, end):
+    text = text[start:end+1]
+    print(text)
+    char = random.choice(text)
+    return char
+print(choice_from_range("abcdefghij",6,8))
+
+def choice_from_range(text, begin, end):
+    return text[random.randint(begin, end)]
 
