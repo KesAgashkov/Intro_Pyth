@@ -69,14 +69,14 @@ def search_uniq_elts(elements: list) -> list:
 # Александр Пушкин 4
 
 
-def write_to_file():
-    with open ('file1.txt','w') as file:
-        file.write('''Ангела Меркель 5
+def write_to_file(str = '''Ангела Меркель 5
 Энакин Скайуокер 5
 Фредди Меркури 3
-Александр Пушкин 4''')
+Александр Пушкин 4
+Гоголь Моголь 5'''):
+    with open ('file1.txt','w') as file:
+        file.write(str)
 
-write_to_file()
 
 def rewrite_data():
     # with open('file1.txt', 'r') as file:
@@ -89,13 +89,13 @@ def rewrite_data():
         lines = file1.readlines()
         char = '5'
         for line in lines:
-            if char == line[-1]:
+            if char in line:
                 new_data = line.replace(line, line.upper())
                 text2.write(new_data)
             else:
                 text2.write(line)
-# write_to_file()
-# rewrite_data()
+write_to_file()
+rewrite_data()
 
 # 4- Шифр Цезаря - это способ шифрования, где каждая буква смещается на определенное количество символов влево
 # или вправо. При расшифровке происходит обратная операция.
@@ -176,4 +176,77 @@ def rewrite_data():
 # Решения оформляйте в виде функций
 # Используйте type hints и doctring
 
-rewrite_data()
+def write_to_file_task_5(str = 'AAAAAAAAAAAABBBBBBBBBBBCCCCCCCCCCDDDDDDEEEEEFFFFG python is sooooooo coooooool'):
+    with open ('file_task_5.txt','w') as file:
+        file.write(str)
+write_to_file_task_5()
+
+def convert_to_RLE_alg()->str:
+
+    """
+        Функция осуществляет кодирование длин серий (RLE)
+
+        Returns:
+                compr_text : str - сжатый текст
+    """
+
+    with open('file_task_5.txt', 'r') as file:
+        text_for_compress = file.read()
+    index = 0
+    count = 1
+    compr_text = ''
+    text_for_compress += ' '
+    while index < len(text_for_compress)-1:
+        if text_for_compress[index].isdigit():
+            compr_text += text_for_compress[index]
+            index+=1
+        elif text_for_compress[index] == text_for_compress[index + 1]:
+            count += 1
+            index += 1
+        elif text_for_compress[index] != text_for_compress[index + 1]:
+            if count ==1:
+                compr_text += text_for_compress[index]
+            else:
+                compr_text += str(count) + text_for_compress[index]
+            count = 1
+            index += 1
+        elif index.text_for_compress[index] == -1:
+            compr_text+=text_for_compress[index]
+    with open('file_task_5_compr', 'w') as file:
+        file.write(compr_text)
+    return compr_text, len(text_for_compress)
+
+
+    return compr_text
+
+# print(f'Выходной текст и длина первоначального текста:{convert_to_RLE_alg()}')
+compr_text, prime_lenght = convert_to_RLE_alg()
+
+
+def recompression_RLE_to_text()->str:
+
+    """
+        Функция осуществляет распаковку сжатого текста
+
+        Returns:
+                long_text : str - распакованный текст
+    """
+    with open('file_task_5_compr', 'r') as file:
+        text_from_file = file.read()
+    index = 0
+    count = ''
+    compr_text = ''
+    while index < len(text_from_file):
+        if text_from_file[index].isdigit():
+            count += text_from_file[index]
+            index+=1
+        elif count == '':
+            compr_text += text_from_file[index]
+            index += 1
+        else:
+            compr_text += text_from_file[index] * int(count)
+            count = ''
+            index += 1
+    return compr_text
+
+print(recompression_RLE_to_text())
