@@ -41,5 +41,11 @@ print(f'''Simvol code {a} is {a_ord}.
 Simvol code {b} is {b_ord}.
 Simvol code {c} is {c_ord}.''')
 
-
+num = int(input())
+num = str(num)
+num = num.zfill(6)
+if (int(num[0]) + int(num[1]) + int(num[2])) == (int(num[-1]) + int(num[-2]) + int(num[-3])):
+    print('YES')
+else:
+    print('NO')
 

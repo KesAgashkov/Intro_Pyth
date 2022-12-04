@@ -102,6 +102,27 @@ print(factorial ())
 # Если хотите делать паузы, то импортируйте библиотеку time и используйте оттуда функцию sleep.
 # Определите номер этого человека и количество монет, которые оказались у него в конце игры.
 
+
+# whole_num = 5
+# choose_num = 3
+# num_two_coin = whole_num - choose_num
+# num = choose_num - 1
+# list_partic = [1] * whole_num
+# for choose_num in list_partic:
+#     list_partic[choose_num] += 2
+# while whole_num > 0:
+#     list_partic[:] = [1] * choose_num
+#     second_group = [2] * num_two_coin
+#     list_partic = first_group + second_group
+#     list_partic.insert(choose_num, list_partic[num] + list_partic[choose_num])
+#     list_partic.pop(num)
+#     list_partic.pop(-1)
+#     whole_num -= 1
+# while whole_num>0:
+
+# poor_list = [x+1 for x in first_group]
+whole_num -= 1
+
 # def game_with_coins (whole_num, choose num):
 
 # whole_num = 5
@@ -143,7 +164,7 @@ print(factorial ())
 # new_partic.append(x)
 
 
+# list_partic.insert(choose_num,list_partic[num]+list_partic[choose_num])
+# list_partic.pop(num)
 
-
-# print(list_poor,f'\n{list_rich}')
 
