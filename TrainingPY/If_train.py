@@ -60,3 +60,135 @@ else:
         print('YES')
     else:
         print('NO')
+
+s, v1, v2, t1, t2 = map(int,input().split())
+first_speed = s*v1+(2*t1)
+sec_speed = s*v2+(2*t2)
+if first_speed<sec_speed:
+    print('First')
+elif first_speed>sec_speed:
+    print('Second')
+else:
+    print('Friendship')
+
+fir = input().lower()
+sec = input().lower()
+if fir[-1] != 'ь':
+    if fir[-1] == sec[0]:
+        print('Good')
+    else:
+        print('Bad')
+else:
+    if fir[-2] == sec[0]:
+        print('Good')
+    else:
+        print('Bad')
+
+x = int(input())
+if x%3 == 0 and x%5 == 0:
+    print("FizzBuzz")
+elif x%3 == 0:
+    print("Fizz")
+elif x%5 == 0:
+    print("Buzz")
+else:
+    print(x)
+
+month = int(input())
+list = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+print(list[month-1])
+
+age = int(input())
+print('Младенец') if age<2 else None
+print('Малыш') if 2<=age<4 else None
+print('Ребенок') if 4<=age<12 else None
+print('Подросток') if 12<=age<19 else None
+print('Взрослый человек') if 19<=age<65 else None
+print('Пожилой человек') if age>=65 else None
+
+
+x = round(float(input()),1)
+y = round(float(input()),1)
+sigh = input()
+if sigh == '+':
+    print(x+y)
+elif sigh == '-':
+    print(x-y)
+elif sigh == '*':
+    print(round((x*y),1))
+elif sigh == '/':
+    if y != 0:
+        print(round((x/y),1))
+    else:
+        print('Неизвестно')
+else:
+    print('Неизвестно')
+
+
+fir = input()
+sec = input()
+if len(fir) < 6:
+    print('Short')
+elif fir != sec:
+    print('Difference')
+else:
+    print('OK')
+
+
+
+course = int(input())
+
+match course:
+    case 1:
+        print("Совсем еще зеленый студентик")
+    case 2:
+        print("Джун-студент")
+
+    case 3:
+        print("Мидл-студент")
+
+    case 4:
+        print("Сеньер-студент")
+
+    case 5:
+        print("Босс качалки")
+    case  _:
+        print("Неизвестный курс")
+
+
+num_month = int(input())
+
+match course:
+    case 1|3|5|7|8|10|12:
+        print(31)
+    case 4|6|9|11:
+        print(30)
+    case  _:
+        print(28)
+
+num_month = input()
+
+match num_month:
+    case 'Овен'|'Лев'|'Стрелец':
+        print('Огненный')
+    case 'Телец'|'Дева'|'Козерог':
+        print('Земной')
+    case 'Близнецы'|'Весы'|'Водолей':
+        print('Воздушный')
+    case  _:
+        print('Водный')
+
+# меняйте значение переменной value
+value = [1, 2, 3]
+
+match value:
+    case int() | float():
+        print("Имеем дело с числом")
+    case str():
+        print("Имеем дело со строкой")
+    case list():
+        print("Имеем дело со списком")
+    case  _:
+        print(f"Лучше с этим дел не иметь")
+
+
