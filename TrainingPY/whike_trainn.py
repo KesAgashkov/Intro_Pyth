@@ -239,3 +239,79 @@ while num<=x:
     else:
         num+=1
 print(res)
+
+#Нод 1 метод
+a,b = map(int,input().split())
+
+while a != b:
+    if a > b:
+        a = a - b
+    else:
+        b = b - a
+print(a)
+
+#Нод 2 метод
+a,b = map(int,input().split())
+while b > 0:
+    c = a%b
+    a = b
+    b = c
+print(a)
+
+
+#Нок поиск
+a,b = map(int,input().split())
+d = a*b
+while b > 0:
+    c = a%b
+    a = b
+    b = c
+print(int(d/a))
+
+num = int(input())
+count = 2
+while True:
+    if num%count == 0:
+        break
+    count+=1
+print(count)
+
+
+num1 = int(input())
+num2 = int(input())
+while num1<=num2:
+    if num1==777:
+        break
+    elif num1%2 == 0 or num1%3 == 0:
+        num1+=1
+        continue
+    print(num1)
+    num1+=1
+
+#Сиракузская последовательность
+num = int(input())
+count=0
+while True:
+    if num == 1:
+        break
+    elif num%2==0:
+        num/=2
+        count+=1
+    else:
+        num = 3*num+1
+        count+=1
+print(count)
+
+text = list(input())
+i = 0
+while i< len(text):
+    if text[i] == 'e' or text[i] == 'a':
+        print('Ага! Нашлась')
+        break
+    else:
+        print (f'Текущая буква: {text[i]}')
+        i+=1
+else:print('Распечатали все буквы') #Крутое дополнение которое, выполняется сразу после окончания цикла
+
+
+
