@@ -57,29 +57,40 @@
 
 # 4 - Дан список URL различных сайтов. Нужно составить список доменных имен сайтов.
 #
+urls_list = ['https://www.hugedomains.com/domain_profile.cfm?d=litcode.com',
+             'https://www.gosuslugi.ru/',
+             'https://www.avito.ru/saratov/predlozheniya_uslug/massazh_2675272891',
+             'https://gb.ru/',
+             'https://pythontutor.ru/visualizer/']
+domens_list = []
+for i in range(len(urls_list)):
+    change = urls_list[i].partition('//')[-1]
+    change = change.partition('/')[0]
+    domens_list.append(change)
+print(*domens_list,sep = "\n")
 # 5 - Есть список случайных чисел в промежутке от 1 до 100, количеством 200. Создайте список кортежей,
 # первый элемент которого - индекс элемента, а второй - сам элемент, при условии, что они не совпадают.
 # 6 - Из списка выше оставьте только те пары, где сумма кортежа кратна 5
 # Пример
 # [(10,25),(3,4),(4,1)] => [(10,25),(4,1)]
 
-from random import randint
-numbers = [randint(1,100) for i in range(1,101)]
-indexes = [n for n in range(1,101)]
-res = list(zip(indexes,numbers))
-print(res[1][0])
-res_new_1 = []
-res_new_2 = []
-for i in range(0,len(res)-1):
-    if res[i][0] != res[i][1]:
-        if (res[i][0] + res[i][1]) % 5 == 0:
-            res_new_1.append(res[i][0])
-            res_new_2.append(res[i][1])
-new_res = list(zip(res_new_1,res_new_2))
-print (len(res))
-print (res)
-print(len(new_res))
-print(new_res)
+# from random import randint
+# numbers = [randint(1,100) for i in range(1,101)]
+# indexes = [n for n in range(1,101)]
+# res = list(zip(indexes,numbers))
+# print(res[1][0])
+# res_new_1 = []
+# res_new_2 = []
+# for i in range(0,len(res)-1):
+#     if res[i][0] != res[i][1]:
+#         if (res[i][0] + res[i][1]) % 5 == 0:
+#             res_new_1.append(res[i][0])
+#             res_new_2.append(res[i][1])
+# new_res = list(zip(res_new_1,res_new_2))
+# print (len(res))
+# print (res)
+# print(len(new_res))
+# print(new_res)
 
 #
 # 6 - Из списка выше оставьте только те пары, где сумма кортежа кратна 5

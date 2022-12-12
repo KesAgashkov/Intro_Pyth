@@ -58,4 +58,13 @@ for ran in range(n - 1):
 print(*nums)
 print(count)
 
+# Решение системы уравнений методом перебора а и б
 
+n, m = map(int, input().split())
+count = 0
+for a in range(33):
+    for b in range(33):
+        if (a ** 2 + b == n) and (a + b ** 2 == m):
+            count += 1
+
+print(count)
