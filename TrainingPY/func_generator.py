@@ -41,17 +41,17 @@
 #         a, b = b, a + b
 
 def my_range_gen(start=0, stop=0, step=1):
-    if stop == 0 and step==1:
+    if stop == 0 and step == 1:
         stop=start
         start=0
     if start == stop:
-        exit()
+        return
     elif start > stop and step > 0:
-        exit()
+        return
     elif start < stop and step < 0:
-        exit()
+        return
     elif step == 0:
-        exit()
+        return
     else:
         preres = abs((start-stop)//step)
         res = [1]*preres
@@ -59,7 +59,7 @@ def my_range_gen(start=0, stop=0, step=1):
             yield start
             start += step
 
-for i in my_range_gen(8, 5, -1):
+for i in my_range_gen(4,8,-1):
     print(i)
 
 
